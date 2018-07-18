@@ -64,6 +64,9 @@ static const char *upvol[]   = { "amixer", "set", "Master", "3+",     NULL  };
 static const char *downvol[] = { "amixer", "set", "Master", "3-",     NULL  };
 static const char *mutevol[] = { "amixer", "-D", "pulse", "set", "Master", "toggle", NULL  };
 
+/* lock screen */
+static const char *slock[] = { "slock", NULL };
+
 /* applications */
 static const char *openfbrowser[] = { "nautilus", NULL };
 
@@ -95,6 +98,7 @@ static Key keys[] = {
     { MODKEY,                       XK_F3,     spawn,          {.v = upvol   }  },
     { MODKEY,                       XK_F2,     spawn,          {.v = downvol }  },
     { MODKEY,                       XK_F4,     spawn,          {.v = mutevol }  },
+    { MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slock }  },
     { MODKEY,                       XK_F10,    spawn,          {.v = openfbrowser }  },
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)
